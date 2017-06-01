@@ -3,8 +3,15 @@ var VideoListView = Backbone.View.extend({
 
   render: function() {
     this.$el.children().detach();
-    this.$el.html(this.template());
-    return this;
+    //this.$el.html(this.template());
+    this.$el.html('<ul class="video-list"></ul>');
+    this.collection.forEach(this.renderVideo, this);
+    return this; //why return?
+  },
+  
+  renderVideo: function(video) {
+    var videoListEntryView = new VideoListEntryView({model: video});
+    this.$el.find('.video-list').append(videoListEntryView.render());
   },
   
   /*
@@ -16,6 +23,7 @@ var VideoListView = Backbone.View.extend({
   template: templateURL('src/templates/videoList.html')
 
 });
+
 
 
 /*
@@ -42,5 +50,31 @@ App View
   
   
 => Movies View
+
+var MoviesView = Backbone.View.extend({
+
+  initialize: function() {
+    // your code here
+    this.collection.on('sort', this.render, this);
+  },
+
+  render: function() {
+    this.$el.empty();
+    this.collection.forEach(this.renderMovie, this);
+  },
+
+  renderMovie: function(movie) {
+    var movieView = new MovieView({model: movie});
+    this.$el.append(movieView.render());
+  }
+  
+=> MovieView
+
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    return this.$el;
+  }
+
+});
 
 */
