@@ -15,10 +15,18 @@ var AppView = Backbone.View.extend({
   
   render: function() {
     this.$el.html(this.template());
-    let x = new videoList({collection: this.collection}).render();
-    this.$el.html(x);
+    console.log(this.$el.find('.list'));
+    this.$el.find('.list').html();
+    new VideoListView({el: '.list', collection: this.collection}).render();
+    // new VideoListView({collection: this.collection}).render();
+
     return this;
   },
+  
+  // either console append to $el('.list')
+  
+  // or you pass a reference to the particular el you want the next layer
+  // to append to 
 
   template: templateURL('src/templates/app.html')
 
