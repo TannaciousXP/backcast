@@ -8,6 +8,7 @@ var Video = Backbone.Model.extend({
 
   select: function() {
     this.trigger('select', this);
+    console.log('firing off the select event within the model');
   }
 
 });

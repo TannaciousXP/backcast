@@ -1,17 +1,22 @@
 var VideoPlayerView = Backbone.View.extend({
 
+  // listen to a select
+  initialize: function() {
+    console.log('the collection within video player view', this.collection);
+    this.listenTo(this.collection, 'select', this.selectVideo);
+    this.render();
+  },
+  
+  selectVideo: function(video) {
+    console.log('before reassignment', this.model);
+    this.model = video;
+    console.log('after reassignment', this.model);
+    this.render();
+  },
+  
   render: function() {
-    // this.$el.html('<div class="loading">Please wait...</div>');
     this.$el.html(this.template(this.model.attributes));
-    /*
-    somehow we need to get a url -- is it contained inside exVidData?
-    do we have to use one of the props in exVidData?
-     let videoID = this.model.attributes.id.videoId;
-    this.$el.find('.embed-responsive-item').attr('src', "https://www.youtube.com/embed/".concat);
-    
-    take the this.model.attributes.id.videoid, and concat it to the base
-    url https://www.youtube.com/embed/
-    */
+  
     return this;
   },
 

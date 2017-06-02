@@ -1,5 +1,8 @@
 var VideoListView = Backbone.View.extend({
   
+  // event handler for selecting
+  
+ 
 
   render: function() {
     this.$el.children().detach();
@@ -14,7 +17,7 @@ var VideoListView = Backbone.View.extend({
     this.$el.find('.video-list').append(videoListEntryView.render());
   },
   
-  /*
+  /* 
   add another function to render each individual video list entry
   inside that function -- you create a new instance of a videolistentryview
   and then call its render function
