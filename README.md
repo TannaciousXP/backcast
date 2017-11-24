@@ -15,14 +15,13 @@ Task to build YouTube Video player app using [BackboneJS](http://backbonejs.org/
 
 by Peter X. Tan
 
-## Requirements
+## System Requirements
 
 - [Node](https://nodejs.org/en/)
 
 ### Installing System Dependencies
 
 ```
-brew install node
 npm install
 ```
 
