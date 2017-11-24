@@ -24,9 +24,13 @@ by Peter X. Tan
 ```
 brew install node
 npm install
-npm install -g live-server
 ```
 
-## Testing
+## Project Set Up
 
-Open **_test/index.html_** in the browser
+Run the following commands in a different terminal window
+
+```
+npm run start
+npm run test
+```
