@@ -2,6 +2,8 @@
 
 Task to build YouTube Video player app using [BackboneJS](http://backbonejs.org/).
 
+by Peter X. Tan
+
 ## Backbone is Interesting in a few key ways
 
 - Backbone was one of the first JavaScript MVC frameworks to gain substantial popularity and is used widely.
@@ -12,8 +14,6 @@ Task to build YouTube Video player app using [BackboneJS](http://backbonejs.org/
 
 - Learn Backbone and lean how to think about web apps as components
 - Continue practicing interctions with a REST API (in this case, the [YouTube Data API](https://developers.google.com/youtube/v3/?hl=en))
-
-by Peter X. Tan
 
 ## System Requirements
 
